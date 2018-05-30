@@ -29,9 +29,10 @@ class App extends Component {
           </nav>
         </header>
         <Switch>
+          <Redirect from="/all-courses" to="/courses" />
           <Route path="/users" exact component={Users} />
           <Route path="/courses" component={Courses} />
-          <Redirect from="/" to="/users" />
+          <Redirect from="/" to="/users" exact/>
           <Route render={ () => <h1>Not Found</h1>} />
           {/* <Route path="/:id" component={Course} /> */}
         </Switch>
