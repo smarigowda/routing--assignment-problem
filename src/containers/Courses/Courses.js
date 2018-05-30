@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import Course from '../Course/Course';
 
 import './Courses.css';
@@ -23,7 +23,7 @@ class Courses extends Component {
                             return (
                                 <Link to={
                                     {
-                                        pathname: '/' + course.id,
+                                        pathname: '/courses/' + course.id,
                                         search: '?title=' + course.title,
                                     }
                                 } key={course.id}>
@@ -33,6 +33,7 @@ class Courses extends Component {
                         } )
                     }
                 </section>
+                <Route path={ '/courses/:id'} component={Course} />
             </div>
         );
     }
